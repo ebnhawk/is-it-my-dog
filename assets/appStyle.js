@@ -19,6 +19,24 @@ export default StyleSheet.create({
     fontWeight: 'bold',
     marginTop: 60
   },
+  resultsContainer: {
+    flex: 1,
+    backgroundColor: '#000',
+    alignItems: 'center',
+    justifyContent: 'center'
+  },
+  true: {
+    color: '#379683',
+    fontSize: 40,
+    fontWeight: 'bold',
+    marginBottom: 60
+  },
+  false: {
+    color: '#d6492c',
+    fontSize: 40,
+    fontWeight: 'bold',
+    marginBottom: 60
+  },
   sub: {
     color: '#FFF',
     fontSize: 20,
@@ -48,8 +66,5 @@ export default StyleSheet.create({
   selected: {
     backgroundColor: '#FFF',
     opacity: 0.5
-  },
-  nav: {
-    backgroundColor: '#c4a18b'
   }
 })

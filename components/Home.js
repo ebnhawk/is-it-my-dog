@@ -10,7 +10,7 @@ export default class Home extends React.Component {
   }
 
   handlePress() {
-    return this.props.navigation.navigate('PicSelect')
+    return this.props.navigation.navigate('Camera')
   }
   render() {
     return (

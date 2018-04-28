@@ -3,13 +3,15 @@ import { StackNavigator } from 'react-navigation'
 import Home from './components/Home'
 import PicSelect from './components/PicSelect'
 import Results from './components/Results'
+import Camera from './components/Camera'
 import { Permissions } from 'expo'
 
 const RootStack = StackNavigator(
   {
     Home: { screen: Home },
     PicSelect: { screen: PicSelect },
-    Results: { screen: Results }
+    Results: { screen: Results },
+    Camera: { screen: Camera }
   },
   {
     initialRouteName: 'Home',
@@ -26,19 +28,9 @@ const alertIfRemoteNotificationsDisabledAsync = async () => {
   }
 }
 
-const getPermissions = async () => {
-  const { status } = await Permissions.askAsync(Permissions.CAMERA)
-  if (status === 'granted') {
-    console.log('Permissions Granted')
-  } else {
-    throw new Error('Permissions denied.')
-  }
-}
-
 export default class App extends Component {
   componentDidMount() {
     alertIfRemoteNotificationsDisabledAsync()
-    getPermissions()
   }
   render() {
     return <RootStack />
