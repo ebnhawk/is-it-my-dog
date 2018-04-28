@@ -66,5 +66,17 @@ export default StyleSheet.create({
   selected: {
     backgroundColor: '#FFF',
     opacity: 0.5
+  },
+  snap: {
+    flex: 1,
+    elevation: 3,
+    alignItems: 'center',
+    justifyContent: 'flex-end',
+    paddingBottom: 10
+  },
+  cameraLoad: {
+    flex: 1,
+    alignItems: 'center',
+    justifyContent: 'center'
   }
 })

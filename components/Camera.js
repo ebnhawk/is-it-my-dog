@@ -1,11 +1,19 @@
 import React from 'react'
-import { Text, View, TouchableOpacity, ActivityIndicator } from 'react-native'
+import {
+  Text,
+  View,
+  TouchableOpacity,
+  ActivityIndicator,
+  Button
+} from 'react-native'
 import { Camera, Permissions } from 'expo'
+import styles from '../assets/appStyle'
 
 export default class CameraExample extends React.Component {
   constructor() {
     super()
     this.state = {
+      takingPic: false,
       hasCameraPermission: null,
       type: Camera.Constants.Type.back
     }
@@ -19,7 +27,10 @@ export default class CameraExample extends React.Component {
 
   async snap() {
     if (this.camera) {
-      console.log('yes camera')
+      console.log('Snap Callled')
+      this.setState({ takingPic: true }, () => {
+        return console.log('State Set')
+      })
       let pic = await this.camera.takePictureAsync({
         quality: 0.7,
         base64: true
@@ -48,45 +59,22 @@ export default class CameraExample extends React.Component {
             <View
               style={{
                 flex: 1,
-                backgroundColor: 'transparent',
-                flexDirection: 'row'
+                backgroundColor: 'transparent'
               }}>
-              <TouchableOpacity
-                style={{
-                  flex: 0.1,
-                  alignSelf: 'flex-end',
-                  alignItems: 'center'
-                }}
-                onPress={() => {
-                  this.setState({
-                    type:
-                      this.state.type === Camera.Constants.Type.back
-                        ? Camera.Constants.Type.front
-                        : Camera.Constants.Type.back
-                  })
-                }}>
-                <Text
-                  style={{ fontSize: 18, marginBottom: 10, color: 'white' }}>
-                  {' '}
-                  Flip{' '}
-                </Text>
-              </TouchableOpacity>
-            </View>
-            <View
-              style={{
-                flex: 1,
-                backgroundColor: 'transparent',
-                flexDirection: 'row'
-              }}>
-              <TouchableOpacity
-                style={{
-                  flex: 0.1,
-                  alignSelf: 'flex-end',
-                  alignItems: 'center'
-                }}
-                onPress={this.snap}>
-                <Text>Snap</Text>
-              </TouchableOpacity>
+              {this.state.takingPic ? (
+                <View style={styles.cameraLoad}>
+                  <ActivityIndicator size="large" color="#FFF" />
+                </View>
+              ) : (
+                <View />
+              )}
+              <View style={styles.snap}>
+                <Button
+                  onPress={this.snap}
+                  title="TAKE PICTURE"
+                  color="#d6492c"
+                />
+              </View>
             </View>
           </Camera>
         </View>

@@ -11,7 +11,7 @@ export default class Results extends Component {
     this.handlePress = this.handlePress.bind(this)
   }
   async componentDidMount() {
-    console.log('starting search')
+    console.log('Starting Comparison')
     const clarifai = new Clarifai.App({
       apiKey: API
     })
