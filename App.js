@@ -16,7 +16,8 @@ const RootStack = StackNavigator(
   {
     initialRouteName: 'Home',
     navigationOptions: {
-      headerStyle: { backgroundColor: '#000' }
+      headerStyle: { backgroundColor: '#000' },
+      headerTintColor: '#FFF'
     }
   }
 )
