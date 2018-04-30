@@ -47,11 +47,6 @@ export default StyleSheet.create({
     fontSize: 15,
     marginTop: 60
   },
-  gallery: {
-    height: 100,
-    width: 100,
-    margin: 5
-  },
   pic: {
     height: 200,
     width: 150,
@@ -67,12 +62,25 @@ export default StyleSheet.create({
     backgroundColor: '#FFF',
     opacity: 0.5
   },
+  select: {
+    fontWeight: 'bold',
+    textAlign: 'right',
+    marginRight: 5,
+    textShadowOffset: { width: 1, height: 1 },
+    color: '#FFF'
+  },
   snap: {
     flex: 1,
     elevation: 3,
     alignItems: 'center',
     justifyContent: 'flex-end',
     paddingBottom: 10
+  },
+  gallery: {
+    flex: 1,
+    elevation: 3,
+    alignItems: 'center',
+    justifyContent: 'flex-start'
   },
   cameraLoad: {
     flex: 1,
