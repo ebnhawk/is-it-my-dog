@@ -1,5 +1,11 @@
 import React, { Component } from 'react'
-import { Text, View, ActivityIndicator, Button } from 'react-native'
+import {
+  Text,
+  View,
+  ActivityIndicator,
+  Button,
+  TouchableHighlight
+} from 'react-native'
 import { Camera, Permissions, ImagePicker } from 'expo'
 import styles from '../assets/appStyle'
 
@@ -42,9 +48,7 @@ export default class MyCamera extends Component {
       quality: 0.7,
       base64: true
     })
-
-    console.log('Acquired Base64')
-
+    this.setState({ loading: false }, () => console.log('Acquired Base64'))
     if (!pic.cancelled) {
       this.props.navigation.navigate('Results', {
         base64: pic
@@ -78,11 +82,9 @@ export default class MyCamera extends Component {
                 </View>
               ) : (
                 <View>
-                  <Button
-                    onPress={this.selectImage}
-                    title="SELECT FROM GALLERY"
-                    color="#379683"
-                  />
+                  <TouchableHighlight onPress={this.selectImage}>
+                    <Text style={styles.select}>SELECT FROM GALLERY</Text>
+                  </TouchableHighlight>
                 </View>
               )}
               <View style={styles.snap}>
