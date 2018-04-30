@@ -62,6 +62,13 @@ export default StyleSheet.create({
     backgroundColor: '#FFF',
     opacity: 0.5
   },
+  select: {
+    fontWeight: 'bold',
+    textAlign: 'right',
+    marginRight: 5,
+    textShadowOffset: { width: 1, height: 1 },
+    color: '#FFF'
+  },
   snap: {
     flex: 1,
     elevation: 3,
