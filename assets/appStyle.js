@@ -7,12 +7,6 @@ export default StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'flex-start'
   },
-  picsGallery: {
-    flex: 1,
-    backgroundColor: '#000',
-    alignItems: 'center',
-    paddingTop: 5
-  },
   head: {
     color: '#d6492c',
     fontSize: 40,
@@ -42,11 +36,6 @@ export default StyleSheet.create({
     fontSize: 20,
     marginBottom: 30
   },
-  load: {
-    color: '#FFF',
-    fontSize: 15,
-    marginTop: 60
-  },
   pic: {
     height: 200,
     width: 150,
@@ -57,10 +46,6 @@ export default StyleSheet.create({
     width: 150,
     marginTop: 30,
     marginBottom: 50
-  },
-  selected: {
-    backgroundColor: '#FFF',
-    opacity: 0.5
   },
   select: {
     fontWeight: 'bold',

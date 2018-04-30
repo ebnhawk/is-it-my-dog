@@ -1,11 +1,10 @@
-import React from 'react'
+import React, { Component } from 'react'
 import { Text, View, Image, Button } from 'react-native'
 import styles from '../assets/appStyle'
 
-export default class Home extends React.Component {
+export default class Home extends Component {
   constructor() {
     super()
-    this.state = {}
     this.handlePress = this.handlePress.bind(this)
   }
 

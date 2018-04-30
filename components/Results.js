@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Text, View, Image, Button, ActivityIndicator } from 'react-native'
+import { Text, View, Button, ActivityIndicator } from 'react-native'
 import styles from '../assets/appStyle'
 import Clarifai from 'clarifai'
 import { API } from '../secrets'
@@ -22,7 +22,6 @@ export default class Results extends Component {
       base64: this.props.navigation.state.params.base64.base64
     })
     const { concepts } = response.outputs[0].data
-
     this.setState({ results: concepts[0].value > 0.8 })
   }
   handlePress() {

@@ -29,9 +29,7 @@ export default class MyCamera extends Component {
   async snap() {
     if (this.camera) {
       console.log('Snap Callled')
-      this.setState({ loading: true }, () => {
-        return console.log('State Set')
-      })
+      this.setState({ loading: true }, () => console.log('State Set'))
       let pic = await this.camera.takePictureAsync({
         quality: 0.7,
         base64: true
